@@ -3,8 +3,7 @@ import time
 from db.model import Model
 class Cotacao():
     def __init__(self):
-        'instanciar a classe que conversa com o banco de dados'
-        pass
+        self.model = Model()
 
     um_minuto = {}
     cinco_minutos = {}
