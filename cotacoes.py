@@ -1,7 +1,6 @@
 from uteis.uteis import Request
 import time
-
-# Aqui de fato eu monto o candle com as inforcamoes da api
+from db.model import Model
 class Cotacao():
     def __init__(self):
         'instanciar a classe que conversa com o banco de dados'
@@ -50,7 +49,7 @@ class Cotacao():
 
         self.intervalos[index]['close'] = api_response['last']
         
-        'Funcao que salva o candle no banco de dados'
+        self.model.save_candle(tabela, self.intervalos[index])
 
         self.intervalos[index]['open'] = api_response['last']
         self.intervalos[index]['high'] = api_response['last']
