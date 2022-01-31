@@ -12,6 +12,9 @@ services:
       - ./db:/docker-entrypoint-initdb.d
     ports:
       - 33066:3306
+    networks:
+      smarttbotNetWork:
+        ipv4_address: 172.18.0.2
 
   python:
     build:
@@ -20,5 +23,16 @@ services:
     restart: always
     volumes:
       - .:/app
+    networks:
+      smarttbotNetWork:
+        ipv4_address: 172.18.0.3
     depends_on:
       - db
+
+networks:
+  smarttbotNetWork:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.0.0/16

@@ -3,7 +3,7 @@ import mysql.connector
 
 # Abrir uma conexao com o banco de dados
 conexao = mysql.connector.connect(
-    host='localhost',
+    host='172.18.0.2',
     port=3306,
     password='smarttbot',
     autocommit = True
