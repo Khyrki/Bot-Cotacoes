@@ -20,4 +20,7 @@ Agora digite o comando `mysql -u root -p` no terminal, irá pedir uma senha, esc
 
 ![image](imagens/exemplo2.png)
 
-finalizado a consulta basta sair do mysql com o comando `exit` e do terminal do container também com o comando `exit` e parar a aplicação com o comando `sudo docker-compose down`
+finalizado a consulta basta sair do mysql com o comando `exit` e do terminal do container também com o comando `exit` e parar a aplicação com o comando `sudo docker-compose down`.
+
+Para executar os testes basta escrever o seguinte comando na pasta do projeto:
+`python3 -m pytest test`
